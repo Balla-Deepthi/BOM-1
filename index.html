@@ -4,13 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        img
+        {
+            width: 120px;
+           
+           
+            
+        }
+       
+
+        .container
+        {
+            display: grid;
+            grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
+            gap: 10px;
+            padding: 10px;
+        }
+        .container>div
+       {
+        border: 1px solid black;
+        border-radius: 8px;
+        padding: 10px;
+        text-align: center;
+        box-shadow: 0 0 12px gray;
+        overflow: hidden;
+        
+       }
+       body
+       {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       }
+       #categorySelect
+       {
+        padding: 0.5rem;
+        font-size: 1rem;
+        background-color: rgb(0, 166, 255);
+        color: white;
+        border: none;
+        box-shadow: 0 0 12px gray;
+       }
+       .image
+       {
+        width: 100%;
+            height: 300px;
+            object-fit: contain;
+            display: block;
+       }
+       .item
+       {
+        overflow: hidden;
+        box-shadow: 0 0 10px rgb(200, 199, 199);
+        text-align: center;
+        padding: 1rem;
+        
+       }
+       .item:hover .image{
+            transform:scale(1.1);
+            transition:0.6s ease
+       }
+       .description
+       {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+       }
+       span::before
+        {
+            content: '₹';
+        }
+        .title,.price
+        {
+           
+            font-weight:700
+        }
+        .delete
+        {
+            padding: 0.3rem;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .deleteloader {
+  width: 7px;
+  padding: 8px;
+  position: relative;
+  top: 5px;
+  aspect-ratio: 1;
+  display: inline-block;
+  border-radius: 50%;
+  background: #256fb0;
+  --_m: 
+    conic-gradient(#0000 10%,#000),
+    linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+          mask: var(--_m);
+  -webkit-mask-composite: source-out;
+          mask-composite: subtract;
+  animation: l3 1s infinite linear;
+  display: none;
+}
+        
+    </style>
 </head>
 <body>
-    <form action="#">
-        <input type="text" id="name" placeholder="Enter Name">
-        <br>
-        <input type="submit" value="Add Data">
-    </form>
+    <select id="categorySelect">
+        <option value="all Categories">All Categories</option>
+        <option value="electronics">Electronics</option>
+        <option value="jewelery">Jewelery</option>
+        <option value="men's clothing">Men's Clothing</option>
+        <option value="women's clothing">Women's Clothing</option>
+      </select>
     <div class="container"></div>
     <script src="./index.js"></script>
 </body>
